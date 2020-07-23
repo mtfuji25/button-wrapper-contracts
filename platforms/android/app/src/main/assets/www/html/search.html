@@ -1,0 +1,48 @@
+<ons-page modifier="full_bg" ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" ng-infinite-scroll="loadMore">
+  <ons-if class="search-bar" platform="ios other">
+    <form ng-submit="search(); blurInput('ios')">
+      <ons-input type="search" class="search-input" input-id="ios-search-input" placeholder="Search for musics online" ng-model="query"></ons-input>
+    </form>
+  </ons-if>
+
+  <ons-progress-bar class="download-progress-bar" material value="{{ downloadProgress }}"></ons-progress-bar>
+
+  <div class="content">
+    <div class="{{ audioPlayerClassName }}">
+      <img ng-src="{{ thumbnail }}" style="width: 100vw; height: 40vh; object-fit: cover;">
+      <audio id="audioPlayer" controls controlslist="nodownload" autoplay preload="metadata" style="width: 100vw; background: #EEF0F1;">
+        <source data-ng-src="{{ trustSrcUrl(playUrl) }}" type="audio/mpeg">
+        Your app does not support the audio element.
+      </audio>
+    </div>
+    <ons-list style="background-color: transparent;" scroll-glue>
+      <ons-list-item material tappable ng-repeat="music in results track by $index" style="background-color: transparent;">
+        <div class="left" ng-click="playMusic(music)">
+          <img class="thumbnail" ng-src="{{ music.thumbnail }}">
+        </div>
+        <div class="center">
+          <div class="title" ng-click="playMusic(music)">
+            {{ music.title }}
+          </div>
+          <div class="user" ng-click="playMusic(music)">
+            <ons-icon icon="fa-user"></ons-icon><span style="font-size: 12px"> {{ music.author ? music.author : "Anonymous" }}</span>
+          </div>
+          <div class="desc">
+            <div ng-click="playMusic(music)">
+            {{ music.description }}
+            </div>
+            <ons-button class="{{ downloadClassName }}" ng-click="downloadMusic(music);">Download</ons-button>
+          </div>
+        </div>
+      </ons-list-item>
+    </ons-list>
+
+    <p class="after-list">
+      <span ng-show="results.length === 0 && !loading">{{ labelSearch }}</span>
+      <span ng-show="loading"><ons-icon icon="fa-spinner" size="26px" spin></ons-icon></span>
+    </p>
+  </div>
+</ons-page>
+<!-- <ons-toast id="toast">
+  {{ downloadStatus }}<button>Dismiss</button>
+</ons-toast> -->

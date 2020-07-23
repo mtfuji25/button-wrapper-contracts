@@ -1,0 +1,39 @@
+# cordova-plugin-permission
+
+> This plugin provides the ability to verify and request grants for Android [app permissions](https://developer.android.com/guide/topics/permissions/index.html).
+
+## Installation
+
+```bash
+cordova plugin add cordova-plugin-permission
+```
+
+## Supported platforms
+
+* Android
+
+## Usage
+
+```javascript
+var Permission = window.plugins.Permission
+
+var permission = 'android.permission.RECORD_AUDIO'
+
+Permission.has(permission, function(results) {
+    if (!results[permission]) {
+        Permission.request(permission, function(results) {
+            if (result[permission]) {
+                // permission is granted
+            }
+        }, alert)
+    }
+}, alert)
+```
+
+## API
+
+{{>main}}
+
+## License
+
+This project is [MIT-licensed](LICENSE)

@@ -1,0 +1,74 @@
+{
+  "_from": "cordova-plugin-permission",
+  "_id": "cordova-plugin-permission@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-u5ug5xxMaySYFYzjmrRtY+0fRUc=",
+  "_location": "/cordova-plugin-permission",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-permission",
+    "name": "cordova-plugin-permission",
+    "escapedName": "cordova-plugin-permission",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-permission/-/cordova-plugin-permission-0.1.0.tgz",
+  "_shasum": "bb9ba0e71c4c6b2498158ce39ab46d63ed1f4547",
+  "_spec": "cordova-plugin-permission",
+  "_where": "F:\\Mobile Development\\OnsenUI\\music-downloader",
+  "author": {
+    "name": "Adriano Di Giovanni",
+    "email": "me@adrianodigiovanni.com",
+    "url": "http://adrianodigiovanni.com/"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Verify and request grants for Android app permissions",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "jsdoc-to-markdown": "^4.0.1",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "app",
+    "permission"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "name": "cordova-plugin-permission",
+  "scripts": {
+    "docs": "jsdoc2md --template README.hbs www/index.js > README.md",
+    "precommit": "lint-staged && npm run docs && git add README.md"
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-permission"
+    version="0.1.0">
+
+    <name>Permission</name>
+    <description>Verify and request grants for Android app permissions</description>
+    <author>Adriano Di Giovanni</author>
+    <keywords>android,app,permission</keywords>
+    <license>MIT</license>
+
+    <js-module name="Permission" src="www/index.js">
+        <clobbers target="window.plugins.Permission" />
+    </js-module>
+
+    <js-module name="tests" src="tests/index.spec.js" />
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Permission">
+                <param
+                    name="android-package"
+                    value="com.adrianodigiovanni.permission.CDVPermission"/>
+            </feature>
+        </config-file>
+        <source-file
+            src="src/android/CDVPermission.java"
+            target-dir="src/com/adrianodigiovanni/permission" />
+    </platform>
+</plugin>

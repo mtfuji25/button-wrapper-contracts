@@ -1,0 +1,25 @@
+<ons-page modifier="full_bg" ons-show="updateToolbar('History')">
+  <div class="content">
+    <ons-list>
+      <ons-list-item tappable ng-repeat="music in history track by $index" ng-click="playMusic(music)">
+        <div class="left">
+          <img class="thumbnail" ng-src="{{ music.thumbnail }}">
+        </div>
+        <div class="center">
+          <div class="title">
+            {{ music.title }}
+          </div>
+          <div class="user">
+            <ons-icon icon="fa-user"></ons-icon><span style="font-size: 12px"> {{ music.author ? music.author : "Anonymous" }}</span>
+          </div>
+          <div class="desc">
+            {{ music.description }}
+          </div>
+        </div>
+      </ons-list-item>
+    </ons-list>
+    <p class="after-list" ng-show="history.length === 0">
+      {{labelHistory}}
+    </p>
+  </div>
+</ons-page>

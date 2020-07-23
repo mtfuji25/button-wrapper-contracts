@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.adrianodigiovanni.example" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Example</name>
+    <content src="cdvtests/index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="*" />
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        </config-file>
+    </platform>
+    <plugin name="cordova-plugin-test-framework" spec="^1.1.6" />
+    <plugin name="cordova-plugin-permission" spec=".." />
+    <engine name="android" spec="^7.0.0" />
+</widget>

@@ -1,0 +1,28 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.onsen.musicdownloader"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "io.onsen.musicdownloader"
+    },
+    "cordova-plugin-streaming-media": {
+      "PACKAGE_NAME": "io.onsen.musicdownloader"
+    },
+    "cordova-plugin-permission": {
+      "PACKAGE_NAME": "io.onsen.musicdownloader"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "io.onsen.musicdownloader"
+    }
+  }
+}
